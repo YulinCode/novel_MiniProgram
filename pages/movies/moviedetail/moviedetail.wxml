@@ -1,0 +1,44 @@
+<wxs module="fix">
+	var fixheight = function (w, h) {
+		return 750 / w * h
+	}
+	module.exports = { fixheight: fixheight }
+</wxs>
+
+<view>
+	<capsule show="{{true}}" isback="{{true}}" title="" />
+	<view style="padding-top:{{ top+10 }}px;">
+		<view class="moviedetail" hover-class="none" hover-stop-propagation="false">
+			<video src="{{moviedetail.playInfo[0].url?moviedetail.playInfo[0].url:moviedetail.playUrl}}" style="width:750rpx;height: {{fix.fixheight(moviedetail.playInfo[0].width,moviedetail.playInfo[0].height)}}rpx;" autoplay="{{true}}" />
+			<view class="moviedetail__des" hover-class="none" hover-stop-propagation="false">
+				<text class="moviedetail__title" space="false" decode="false">{{moviedetail.title}}</text>
+				<text class="moviedetail__des__description" user-select space="false" decode="false">{{moviedetail.description}}</text>
+				<view class="moviedetail__des__tags" hover-class="none" hover-stop-propagation="false">
+					<block wx:for="{{moviedetail.tags}}" wx:key="index">
+						<text class="moviedetail__des__tags__item" space="false" decode="false">{{item}}</text>
+					</block>
+				</view>
+				<view class="likebutton">
+					<view bindtap="like">
+						<image src="{{!like?'../../../static/svg/like.svg':'../../../static/svg/like_fill.svg'}}"></image>
+						<text>{{moviedetail.consumption.collectionCount}}</text>
+					</view>
+					<view>
+						<image src="../../../static/svg/reply.svg"></image>
+						<text> {{moviedetail.consumption.replyCount}}</text>
+					</view>
+					<view>
+						<image src="../../../static/svg/fenxiang.svg"></image>
+						<text>{{moviedetail.consumption.shareCount}}</text>
+					</view>
+				</view>
+				<view>
+					<view class="hotvideo">热门视频</view>
+					<block wx:for="{{movielist}}" wx:key="index">
+						<videode bind:moviedetail="moviedetail" item="{{item}}" index="{{index}}" ishome="{{false}}" />
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

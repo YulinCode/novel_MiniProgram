@@ -1,0 +1,246 @@
+/* pages/books/books.wxss */
+page {
+  overflow-y: auto;
+  background-color: var(--grey-50-op);
+}
+
+.search {
+  display: flex;
+  padding: 10rpx 20rpx;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+  position: relative;
+}
+
+.search .search__input {
+  flex: 1;
+  border: 1px solid rgba(153, 153, 153, 0.623);
+  border-radius: 12px;
+  margin-right: 20rpx;
+  height: 60rpx;
+  padding-left: 160rpx;
+}
+
+.search .search__img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.picker {
+  position: absolute;
+  top: 10rpx;
+  left: 22rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  background-color: var(--grey-200);
+  border-radius: 12px 6px 6px 12px;
+  padding: 0 20rpx;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+}
+
+.hotbook {
+  margin: 30rpx;
+}
+
+.hotbook .hottag {
+  padding: 20rpx 0;
+}
+.hotbook .hottag view:nth-child(1) {
+  font-size: calc(var(--title-h3) * 1rpx);
+  margin: 20rpx 0;
+}
+.hotbook .hottag view:nth-child(2) {
+  display: flex;
+  font-size: calc(var(--title-h4) * 1rpx);
+  flex-wrap: wrap;
+}
+.hotbook .hottag view:nth-child(2) text {
+  margin: 10rpx 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rpx 10rpx;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/*  */
+
+.cancel {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0 10rpx 0 20rpx;
+  right: 100rpx;
+  z-index: 999;
+}
+
+.search_content {
+  padding-bottom: 90px;
+}
+
+.search_content .search_cont_count {
+  margin: 30rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.search_content .search_cont_count text {
+  padding: 10rpx 40rpx;
+  border-radius: 30rpx;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.title_h2 {
+  margin: 30rpx 30rpx 10rpx;
+  font-size: 36rpx;
+}
+
+.recommend {
+  width: 100%;
+  height: 392rpx;
+  white-space: nowrap;
+}
+
+.recommend__item {
+  display: inline-block;
+  width: 250rpx;
+  height: 332rpx;
+  position: relative;
+  margin: 30rpx;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.recommend__item image {
+  width: 250rpx;
+  height: 332rpx;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.recommend__title {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  width: 250rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px 12px 6px 6px;
+  padding: 6rpx 30rpx;
+  justify-content: space-around;
+}
+
+.recommend__title text:nth-child(1) {
+  font-size: 28rpx;
+  margin: 10rpx 0;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recommend__title text:nth-child(2) {
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 10rpx;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* .banner {
+	width: 100%;
+	height: 400rpx;
+}
+
+.banner_item {
+	width: 90%;
+}
+
+.banner .banner__title {
+	position: absolute;
+	bottom: 0;
+	width: calc(100% - 20rpx);
+	height: 100rpx;
+	border-radius: 0px;
+	padding-left: 20rpx;
+	background: #ffffffc9;
+	backdrop-filter: blur(6px);
+	display: flex;
+	align-items: center;
+}
+
+.banner .banner__title text:nth-child(1) {
+	font-size: 34rpx;
+	font-weight: 600;
+}
+
+.banner .banner__title text:nth-child(2) {
+	padding-left: 30rpx;
+}
+
+.banner .banner__title text:nth-child(3) {
+	flex: 1;
+	text-align: right;
+	padding-right: 20rpx;
+	color: coral;
+} */
+
+.fictionType {
+  font-size: 36rpx;
+  height: 36rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fictionType::before {
+  content: '';
+  width: 2px;
+  height: 36rpx;
+  background-color: red;
+  margin-right: 10rpx;
+  position: relative;
+  top: 2px;
+}
+
+.channel {
+  margin-top: 20px;
+  border-radius: 9px;
+  padding: 20px 5px;
+  position: relative;
+}
+
+.channel .clip {
+  position: absolute;
+  top: -10px;
+  left: 10rpx;
+  font-size: 50px;
+  font-family: Helvetica;
+  font-weight: bold;
+  background-size: cover;
+  color: transparent;
+  z-index: -1;
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+.bookbody {
+  z-index: 99;
+}
+
+.smorebook {
+  text-align: center;
+  background-color: var(--grey-300);
+  padding: 10rpx;
+  border-radius: 9px;
+  color: var(--grey-600);
+}

@@ -1,0 +1,45 @@
+/* components/capsule/capsule.wxss */
+.wrapper {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 99999;
+  background-color: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  top: 0px;
+}
+
+.wrapper .capsule {
+  position: fixed;
+  left: 30rpx;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  justify-content: center;
+  background: #ffffffdd;
+}
+
+.wrapper .title {
+  font-size: 36rpx;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300rpx;
+  text-overflow: ellipsis;
+}
+
+.capsule_bind {
+  position: absolute;
+  inset: 0;
+  transform: scale(3);
+  transform-origin: 30px 25px;
+}

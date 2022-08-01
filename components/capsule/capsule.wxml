@@ -1,0 +1,9 @@
+<!-- components/capsule/capsule.wxml -->
+<view class="wrapper" hover-class="none" hover-stop-propagation="false" style="height:{{fix.height+8+fix.top}}px;{{needblur?'backdrop-filter: blur(30px)':''}}">
+	<view wx:if="{{show}}" class="capsule" style="opacity:{{opacity}};height:{{fix.height+2}}px;width: {{fix.width}}px;top: {{fix.top}}px;">
+		<image class="img" wx:if="{{!isback&&fix.height}}" src="../../static/other/home.png" mode="heightFix" style="height:{{fix.height-10}}px;" />
+		<image class="img"  wx:if="{{isback}}" src="../../static/other/back.png" style="height:{{fix.height-10}}px;" mode="aspectFit" />
+		<view bindtap="back" class="capsule_bind"></view>
+	</view>
+	<view class="title" style="top: {{fix.top}}px;height:{{fix.height}}px;color:{{titlecolor}}">{{title}}</view>
+</view>

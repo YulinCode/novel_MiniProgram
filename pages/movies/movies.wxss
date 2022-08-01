@@ -1,0 +1,111 @@
+/* pages/movies/movies.wxss */
+page {
+  overflow: auto;
+}
+
+.container .movies {
+  width: 100%;
+}
+
+.movies__item {
+  position: relative;
+  line-height: 0;
+}
+
+.item__image {
+  width: 100%;
+}
+
+.playimage {
+  position: absolute;
+  height: 100rpx;
+  width: 100rpx;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.movies__item .firstitem__title {
+  position: absolute;
+  bottom: 0;
+  background: #ffffff85;
+  width: 100%;
+  backdrop-filter: blur(9px);
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+  line-height: 1.1;
+}
+
+.movies__item .firstitem__title .titledetail {
+  padding-bottom: 20rpx;
+}
+
+.movies__item .firstitem__title .titledetail .titledetail__title {
+  color: #fff;
+  font-size: 36rpx;
+  padding-right: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movies__item .firstitem__title .authordetail {
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.movies__item .firstitem__title .authordetail .authordetail__name {
+  padding-right: 30rpx;
+}
+
+.movies__item .firstitem__title .authordetail .authordetail__category {
+  padding-right: 30rpx;
+}
+
+.movies__item .firstitem__title .authordetail .authordetail__duration {
+  padding-right: 30rpx;
+}
+
+.duanpian {
+  text-align: center;
+  margin: 40rpx;
+  font-size: 46rpx;
+}
+
+.movies__item .item__title {
+  width: 100%;
+  backdrop-filter: blur(9px);
+  padding: 40rpx 10rpx;
+  box-sizing: border-box;
+  line-height: 1.1;
+}
+
+.movies__item .item__title .titledetail {
+  padding-bottom: 20rpx;
+}
+
+.movies__item .item__title .titledetail .titledetail__title {
+  color: #000;
+  font-size: 34rpx;
+  padding-right: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movies__item .item__title .authordetail {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.movies__item .item__title .authordetail .authordetail__name {
+  padding-right: 30rpx;
+}
+
+.movies__item .item__title .authordetail .authordetail__category {
+  padding-right: 30rpx;
+}
+
+.movies__item .item__title .authordetail .authordetail__duration {
+  padding-right: 30rpx;
+}

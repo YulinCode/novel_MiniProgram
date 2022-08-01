@@ -1,0 +1,9 @@
+<view>
+	<view class="container">
+		<view class="movies" hover-class="none" hover-stop-propagation="false">
+			<block wx:for="{{itemList}}" wx:key="index">
+				<videode bind:moviedetail="moviedetail" item="{{item}}" index="{{index}}" ishome="{{true}}" />
+			</block>
+		</view>
+	</view>
+</view>

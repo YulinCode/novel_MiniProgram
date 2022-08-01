@@ -1,0 +1,30 @@
+<wxs module="dist">
+	var out = function (num) {
+		return parseInt(num)
+	}
+	module.exports = { out: out };
+</wxs>
+
+<view wx:if="{{ishome&&index===1}}" class="duanpian" hover-class="none" hover-stop-propagation="false">
+	<text class="" space="false" decode="false">短片</text>
+</view>
+<view class="movies__item" hover-class="none" hover-stop-propagation="false">
+	<!-- <view class="movies__item" hover-class="none" hover-stop-propagation="false" style="background: url({{ishome?index===0?item.data.cover.homepage:item.data.cover.detail:item.data.cover.detail}});"> -->
+	<image class="item__image" src="{{ishome?index===0?item.data.cover.homepage||item.data.cover.detail:item.data.cover.detail:item.data.cover.detail}}" mode="widthFix" lazy-load="false" binderror="" bindload="" bind:tap="moviedetail" data-index="{{index}}" />
+	<view class="{{ishome?index===0?'firstitem__title':'item__title':'item__title'}} authoricon" hover-class="none" hover-stop-propagation="false">
+		<view class="author-fa">
+			<image class="author" src="{{item.data.author.icon}}"></image>
+		</view>
+		<view class="detail-fa">
+			<view>
+				<text class="titledetail__title" space="false" decode="false">{{item.data.title}}</text>
+			</view>
+			<view class="authordetail" hover-class="none" hover-stop-propagation="false">
+				<text class="authordetail__name" space="false" decode="false">{{item.data.author.name}}</text>
+				<text class="authordetail__category" space="false" decode="false">#{{item.data.category}}</text>
+				<text class="authordetail__duration" space="false" decode="false">⏱️{{dist.out(item.data.duration/60)}}:{{item.data.duration%60}}</text>
+			</view>
+		</view>
+	</view>
+	<image wx:if="{{ishome?index===0?false:true:true}}" class="playimage" src="../../static/movies/play_fill.svg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" bind:tap="moviedetail" data-index="{{index}}" />
+</view>

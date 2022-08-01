@@ -1,0 +1,28 @@
+<!--components/book/book.wxml-->
+<wxs module="fix">
+	var fixtext = function (text) {
+		return text.trim().slice(0, 42) + '...'
+	}
+	var fixauthor = function (author) {
+		if (author.length <= 10) {
+			return author
+		} else {
+			return author.slice(0, 10).trim() + '...'
+		}
+	}
+
+	module.exports = { fixtext: fixtext, fixauthor: fixauthor }
+</wxs>
+
+<view class="book__detail" style="{{index===9?'border:none':''}}">
+	<view class="book__detail__left">
+		<image class="book__detail__left-img" src="{{item.cover}}"></image>
+	</view>
+	<view class="book__detail__right">
+		<view class="book__detail__right-title">
+			<text class="title">{{item.title}}</text>
+		</view>
+		<view class="author">{{fix.fixauthor(item.author)}}</view>
+		<view class="descs">{{fix.fixtext(item.descs)}}</view>
+	</view>
+</view>

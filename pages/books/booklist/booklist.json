@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "capsule": "../../../components/capsule/capsule",
+    "book": "../../../components/book/book",
+    "loadiing": "../../../components/loading/loading"
+  }
+}

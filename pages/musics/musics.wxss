@@ -1,0 +1,179 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes translate {
+  0% {
+    bottom: 300rpx;
+  }
+
+  100% {
+    bottom: 400rpx;
+  }
+}
+
+@keyframes width_animation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+page {
+  overflow-y: hidden;
+}
+
+.transition {
+  transition: all 0.3s linear;
+}
+
+
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content__imageinfo__img {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 60rpx solid rgba(153, 153, 153, 0.382);
+  animation: rotate 20s linear infinite;
+}
+
+.content .content__name {
+  display: flex;
+  align-items: center;
+  margin: 40rpx 0;
+  width: 80%;
+}
+
+.content .content__name text:first-child {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.content .content__name .content__name__left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding-right: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .content__name .content__name__right {
+  width: 160rpx;
+  text-align: right;
+  padding: 20rpx;
+}
+
+.content .content__name .content__name__rightimg {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.content__control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 240rpx;
+  border-radius: 9px;
+  padding: 0 20rpx;
+  overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.content__view {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to right,
+      rgba(203, 229, 241, 0.8) 0%,
+      rgba(199, 192, 220, 0.76) 20%,
+      rgba(243, 211, 223, 0.72) 40%,
+      rgba(246, 208, 188, 0.68) 60%,
+      rgba(249, 247, 210, 0.64) 80%,
+      rgba(203, 226, 205, 0.6) 100%);
+  width: 0;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-name: width_animation;
+}
+
+.content__control .img {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 20rpx;
+}
+
+.content__control .img-play {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.musicitem {
+  position: fixed;
+  bottom: 300rpx;
+  width: 90%;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
+  overflow: hidden;
+  animation: translate 0.2s ease-out both;
+}
+
+.musicitem .musicitem_ul {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(80vh - 300rpx);
+  overflow-y: scroll;
+  border-radius: 9px;
+  backdrop-filter: blur(20px);
+  background: #ffffff8c;
+  padding: 30rpx 0rpx;
+}
+
+.musicitem .musicitem_de {
+  padding: 20rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #999;
+  position: relative;
+  height: 100rpx;
+}
+
+.musicitem .musicitem_de .name {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.musicitem .musicitem_de .artistsname {
+  color: #333;
+  padding-top: 6rpx;
+}
+
+.musicitem .musicitem_de .imagelike {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  right: 40rpx;
+  top: 10rpx;
+}

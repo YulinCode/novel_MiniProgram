@@ -1,0 +1,9 @@
+<!--pages/books/booklist/booklist.wxml-->
+<capsule show="{{true}}" isback="{{true}}" title="{{name}}" />
+<loadiing wx:if="{{!booklist}}" />
+<view style="padding-top: {{top+10}}px; padding-bottom: 20px;">
+	<block wx:for="{{booklist}}" wx:key="index">
+		<book bind:tap="gotodetail" data-fictionId="{{item.fictionId}}" index="{{index}}" item="{{item}}"></book>
+	</block>
+	<loadiing wx:if="{{true}}" />
+</view>

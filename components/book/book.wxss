@@ -1,0 +1,48 @@
+/* components/book/book.wxss */
+.book__detail {
+	display: flex;
+	margin: 20rpx 10rpx;
+	background-color: #fbe9e723;
+	border-radius: 9px;
+}
+
+
+.book__detail__left-img {
+	width: 200rpx;
+	height: 266rpx;
+	margin: 20rpx;
+	border-radius: 6px;
+	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.book__detail__right {
+	flex: 1;
+	max-width: 400rpx;
+	display: flex;
+	flex-direction: column;
+	padding: 30rpx 20rpx;
+	position: relative;
+}
+
+.book__detail__right-title {
+	margin-bottom: 10rpx;
+}
+
+.title {
+	font-size: 30rpx;
+	font-weight: 600;
+}
+
+.author {
+	font-size: 22rpx;
+	margin-bottom: 10rpx;
+	color: #999;
+}
+
+.descs {
+	font-size: 26rpx;
+	line-height: 40rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 10rpx;
+}

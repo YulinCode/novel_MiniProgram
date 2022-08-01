@@ -1,0 +1,89 @@
+.movies__item {
+	position: relative;
+	line-height: 0;
+	width: 100%;
+}
+
+.item__image {
+	width: 100%;
+}
+
+.author-fa {
+	line-height: 0;
+}
+
+.authoricon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 20rpx 10rpx 40rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.firstitem__title {
+	position: absolute;
+	bottom: 0;
+	color: white;
+	background: #ffffff4d;
+	backdrop-filter: blur(6px);
+	width: 100%;
+	margin: 0;
+	padding: 20rpx 10rpx;
+}
+
+.author {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	margin-right: 20rpx;
+}
+
+.detail-fa {
+	height: 100rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-right: 20rpx;
+	/* padding: 10rpx 0; */
+}
+
+.firstplayimage {
+	position: absolute;
+	height: 100rpx;
+	width: 100rpx;
+	top: 45%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: .8;
+}
+
+.playimage {
+	position: absolute;
+	height: 100rpx;
+	width: 100rpx;
+	top: 25%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: .8;
+}
+
+.duanpian {
+	text-align: center;
+	font-size: 40rpx;
+	margin: 30rpx 0;
+}
+
+
+.titledetail__title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.authordetail .authordetail__name {
+	margin-right: 20rpx;
+}
+
+.authordetail .authordetail__category {
+	margin-right: 20rpx;
+}

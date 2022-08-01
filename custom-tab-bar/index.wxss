@@ -1,0 +1,50 @@
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.tabbar {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140rpx;
+  box-sizing: border-box;
+  background: #ffffffc9;
+  backdrop-filter: blur(6px);
+  width: 96%;
+  margin: 0 2%;
+  padding: 10rpx;
+  border-radius: 19px;
+  margin-bottom: 20px;
+}
+
+.tabbar .tab-bar-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.3s;
+}
+
+.tabbar .tab-bar-item .cover-image {
+  position: relative;
+  animation-name: none;
+  animation-duration: 0.5s;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.tabbar .tab-bar-item .cover-view-text {
+  font-size: 30rpx;
+}

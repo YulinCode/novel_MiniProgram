@@ -1,0 +1,22 @@
+<!-- miniprogram/custom-tab-bar/index.wxml -->
+<view class="tabbar">
+	<block wx:for="{{list}}" wx:key="index">
+		<view
+		 class="tab-bar-item"
+		 data-path="{{item.pagePath}}"
+		 data-index="{{index}}"
+		 bindtap="switchTab"
+		>
+			<image
+			 class="cover-image"
+			 style="animation-name:{{selected === index ?'scale':''}}"
+			 mode="aspectFit|aspectFill|widthFix"
+			 src="{{selected === index ? item.selectedIconPath : item.iconPath}}"
+			 lazy-load="false"
+			 binderror=""
+			 bindload=""
+			/>
+			<text class="cover-view-text"   style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</text>
+		</view>
+	</block>
+</view>

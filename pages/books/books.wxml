@@ -1,0 +1,154 @@
+<capsule title="图书" />
+<loadiing wx:if="{{bannerbook.length===0}}" />
+<view wx:if="{{bannerbook.length>0}}">
+	<view style="padding:{{ top+10 }}px 0px;">
+		<view class="search">
+			<view bindtap="onsearch" wx:if="{{!onsearch}}" class="search__input" />
+			<input
+			 wx:if="{{onsearch}}"
+			 value="{{searchvalue}}"
+			 focus
+			 class="search__input"
+			 type="text"
+			 confirm-type="search"
+			 placeholder="请输入搜索的内容"
+			 bindconfirm="gosearch"
+			/>
+			<!-- <image wx:if="{{onsearch}}" bindtap="unsearch" class="search__img cancel" src="../../static/svg/cancel.svg"></image> -->
+			<image class="search__img" bindtap="{{!onsearch?'onsearch':'unsearch'}}" src="{{!onsearch?'../../static/svg/search.svg':'../../static/svg/roundclose.svg'}}" />
+			<picker
+			 wx:if="{{onsearch}}"
+			 class="picker"
+			 bindchange="bindPickerChange"
+			 value="{{optionindex}}"
+			 range="{{optionarray}}"
+			 bindchange="changeoption"
+			>
+				<view>{{optionarray[optionindex]}}🔻</view>
+			</picker>
+		</view>
+
+		<view class="hotbook" wx:if="{{onsearch&&!searchdone}}">
+			<view class="hottitle hottag">
+				<view>热门书籍</view>
+				<view>
+					<block wx:for="{{search.hottitlelist}}" wx:key="index">
+						<text bind:tap="hottag" data-tag="{{item}}" data-op="title">{{item}}</text>
+					</block>
+				</view>
+			</view>
+			<view class="hotauthor hottag">
+				<view>热门作者</view>
+				<view>
+					<block wx:for="{{search.hotauthorlist}}" wx:key="index">
+						<text bind:tap="hottag" data-tag="{{item}}" data-op="author">{{item}}</text>
+					</block>
+				</view>
+			</view>
+		</view>
+
+		<view wx:if="{{searchdone}}" class="search_content">
+			<view class="search_cont_count">
+				<text>共找到{{searchcount}}本书</text>
+			</view>
+			<block wx:for="{{searchlist}}" wx:key="index">
+				<book
+				 bind:tap="gotodetail"
+				 data-fictionId="{{item.fictionId}}"
+				 index="{{index}}"
+				 item="{{item}}"
+				/>
+			</block>
+			<loadiing wx:if="{{searchindex!=searchmaxindex||false}}" />
+		</view>
+
+		<view class="cont" wx:if="{{!onsearch}}">
+			<view class="title_h2">推荐</view>
+			<scroll-view class="recommend" scroll-x="true">
+				<block wx:for="{{bannerbook}}" wx:key="index">
+					<view class="recommend__item" bind:tap="gotodetail" data-fictionId="{{item.fictionId}}">
+						<image src="{{item.cover}}" />
+						<view class="recommend__title isblur">
+							<text>{{item.title}}</text>
+							<text>{{item.author}}</text>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+
+			<view>
+				<view class="channel" wx:if="{{homebooks.girlschannel}}">
+					<view class="clip" style="background: url(http://api.pingcc.cn/fiction/img/退圈后她惊艳全球/退圈后她惊艳全球.jpg) center center;background-clip: text;-webkit-background-clip: text;">GIRL</view>
+					<view class="fictionType">女生频道</view>
+					<view class="bookbody">
+						<block wx:for="{{homebooks.girlschannel}}" wx:key="index">
+							<book
+							 bind:tap="gotodetail"
+							 data-fictionId="{{item.fictionId}}"
+							 index="{{index}}"
+							 item="{{item}}"
+							/>
+						</block>
+						<view bindtap="smorebook" class="smorebook" data-index="0">查看更多</view>
+					</view>
+				</view>
+
+				<view class="channel" wx:if="{{homebooks.martial}}">
+					<view class="clip" style="background: url(http://api.pingcc.cn/fiction/img/养鬼为祸夏一天天九儿/养鬼为祸夏一天天九儿.jpg) center center;background-clip: text;-webkit-background-clip: text;">martial</view>
+					<view class="fictionType">武侠仙侠</view>
+					<block wx:for="{{homebooks.martial}}" wx:key="index">
+						<book
+						 bind:tap="gotodetail"
+						 data-fictionId="{{item.fictionId}}"
+						 index="{{index}}"
+						 item="{{item}}"
+						/>
+					</block>
+					<view bindtap="smorebook" class="smorebook" data-index="1">查看更多</view>
+				</view>
+
+				<view class="channel" wx:if="{{homebooks.fantasymagic}}">
+					<view class="clip" style="background: url(http://api.pingcc.cn/fiction/img/奥特时空传奇/奥特时空传奇.jpg) center center;background-clip: text;-webkit-background-clip: text;">fantasy</view>
+					<view class="fictionType">玄幻魔法</view>
+					<block wx:for="{{homebooks.fantasymagic}}" wx:key="index">
+						<book
+						 bind:tap="gotodetail"
+						 data-fictionId="{{item.fictionId}}"
+						 index="{{index}}"
+						 item="{{item}}"
+						/>
+					</block>
+					<view bindtap="smorebook" class="smorebook" data-index="2">查看更多</view>
+				</view>
+
+				<view class="channel" wx:if="{{homebooks.urbanromance}}">
+					<view class="clip" style="background: url(http://api.pingcc.cn/fiction/img/叶秋徐秀英/叶秋徐秀英.jpg) center center;background-clip: text;-webkit-background-clip: text;">romance</view>
+					<view class="fictionType">都市言情</view>
+					<block wx:for="{{homebooks.urbanromance}}" wx:key="index">
+						<book
+						 bind:tap="gotodetail"
+						 data-fictionId="{{item.fictionId}}"
+						 index="{{index}}"
+						 item="{{item}}"
+						/>
+					</block>
+					<view bindtap="smorebook" class="smorebook" data-index="3">查看更多</view>
+				</view>
+
+				<view class="channel" wx:if="{{homebooks.othernovels}}">
+					<view class="clip" style="background: url(http://api.pingcc.cn/fiction/img/京都羽翼的荣光/京都羽翼的荣光.jpg) center center;background-clip: text;-webkit-background-clip: text;">rnovels</view>
+					<view class="fictionType">其他小说</view>
+					<block wx:for="{{homebooks.othernovels}}" wx:key="index">
+						<book
+						 bind:tap="gotodetail"
+						 data-fictionId="{{item.fictionId}}"
+						 index="{{index}}"
+						 item="{{item}}"
+						/>
+					</block>
+					<view bindtap="smorebook" class="smorebook" data-index="4">查看更多</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

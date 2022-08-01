@@ -1,0 +1,150 @@
+/* pages/books/bookdetail/bookdetail.wxss */
+page {
+  background-color: #f7f7f72d;
+  overflow-y: auto;
+  padding-bottom: 60rpx;
+}
+
+
+.back {
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  backdrop-filter: blur(19px);
+  background-color: rgba(123, 123, 123, 0.6);
+  border-radius: 9px;
+  overflow: hidden;
+  padding: 40rpx 30rpx;
+}
+
+.header .left {
+  width: 200rpx;
+  height: 266rpx;
+  border-radius: 6rpx;
+}
+
+.header .right {
+  flex: 1;
+  padding-left: 30rpx;
+  max-width: 440rpx;
+}
+
+.header .right>view:nth-child(1) {
+  font-size: 32rpx;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.header .right>view:nth-child(2) {
+  color: rgb(235, 235, 235);
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+.header .right>view:nth-child(3) {
+  color: rgb(235, 235, 235);
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.header .right .control {
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.header .right .control view {
+  font-size: calc(var(--title-h3) *1rpx);
+  padding: 10rpx 20rpx;
+  color: white;
+  background: linear-gradient(75deg, var(--blue-300), var(--blue-600));
+  border-radius: 6px;
+  margin-top: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  line-height: 0;
+}
+
+.header .right .control view text {
+  line-height: 45rpx;
+}
+
+.header .right .control view:nth-child(2) {
+  background: linear-gradient(75deg, var(--orange-300), var(--orange-600));
+  margin-left: 30rpx;
+}
+
+.content__body {
+  padding: 30rpx;
+}
+
+.content__body view:nth-child(1) {
+  font-size: 30rpx;
+  color: var(--grey-900);
+}
+
+.content__body view:nth-child(2) {
+  color: var(--grey-800);
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.content__body view:nth-child(2) .all {
+  width: 100rpx;
+  font-size: 20rpx;
+  background-color: white;
+  padding: 6rpx 10rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: -2rpx;
+  right: 0;
+  z-index: 99;
+  color: var(--blue-600);
+}
+
+.chapterList {
+  padding: 20rpx;
+  font-size: 26rpx;
+}
+
+.chapterList view {
+  font-size: 28rpx;
+  padding: 16rpx 20rpx;
+  border-radius: 9px;
+}
+
+.chapterList view:first-child {
+  font-size: 30rpx;
+  color: var(--grey-900);
+  display: flex;
+}
+
+.chapterList view:nth-child(even) {
+  background-color: var(--grey-100);
+}
+
+.chapterList view:first-child view:nth-child(2) {
+  align-self: flex-end;
+  justify-self: flex-end;
+  flex: 1;
+  text-align: right;
+  background-color: transparent;
+}
+
+.chapterList view:first-child view:nth-child(2) text {
+  padding-left: 30rpx;
+  color: var(--blue-600);
+}
+
+.allchapterList {
+  text-align: center;
+  text-decoration: aliceblue;
+  color: var(--blue-600);
+  padding-bottom: 30rpx;
+}

@@ -1,0 +1,5 @@
+<div class="bouncing-loader" style="padding-top:{{top+90}}rpx;background-color:{{backcolor}}">
+	<div class="bouncing-loader-1 bouncing-loader"></div>
+	<div class="bouncing-loader-2 bouncing-loader"></div>
+	<div class="bouncing-loader-3 bouncing-loader"></div>
+</div>

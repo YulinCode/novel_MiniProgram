@@ -1,0 +1,228 @@
+/* pages/books/fictionContent/fictioncontent.wxss */
+page {
+  overflow-y: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+#getheight {
+  position: relative;
+}
+
+.pars {
+  position: fixed;
+  transition: all 0.2s;
+  top: 0;
+  height: 10px;
+  background-color: var(--grey-300);
+  background-color: #0066ff4a;
+  left: 0;
+  right: 0;
+  width: 0;
+  backdrop-filter: blur(3px);
+  opacity: 0.8;
+}
+
+.content-body {
+  padding: 10rpx 30rpx;
+}
+.content-body-title {
+  text-align: center;
+  font-weight: 600;
+  margin: 20px;
+}
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control .meun {
+  background: linear-gradient(75deg, var(--blue-300), var(--blue-600));
+}
+
+.control view {
+  display: flex;
+  width: 200rpx;
+  height: 80rpx;
+  background-color: var(--grey-600);
+  color: white;
+  margin: 0 10rpx;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--title-h1) * 1rpx);
+}
+
+.controlsize {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -200rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200rpx;
+  z-index: 9;
+  transition: all 0.3s;
+  font-size: calc(var(--title-h2) * 1rpx);
+  line-height: 1.2;
+}
+
+.controlsize .controlsize__cont {
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  right: 0;
+  background-color: #ebeaea;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6rpx;
+  height: 100rpx;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.controlsize .controlsize__cont__need {
+  top: -112rpx;
+  opacity: 1;
+}
+
+.controlsize .fix {
+  position: relative;
+  top: -10rpx;
+  text-align: center;
+  flex: 1;
+  padding: 30rpx 20rpx;
+  margin: 10rpx;
+  border-radius: 9px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all 0.3s;
+}
+
+.nobottom {
+  bottom: 0rpx;
+}
+
+.controlsize .controlsize__cont .conttitle {
+  width: 200rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlsize .controlsize__cont image {
+  width: 60rpx;
+  height: 60rpx;
+  flex: 1;
+  opacity: 1;
+  transition: all 0.3;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 30rpx;
+  padding: 10rpx;
+  border-radius: 9px;
+}
+
+.changecolor {
+  display: flex;
+}
+
+.changecolor view {
+  background-color: red;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.changecolor view:nth-child(1) {
+  background-color: var(--read-1);
+}
+
+.changecolor view:nth-child(2) {
+  background-color: var(--read-2);
+}
+
+.changecolor view:nth-child(3) {
+  background-color: var(--read-3);
+}
+
+.changecolor view:nth-child(4) {
+  background-color: var(--read-4);
+}
+
+.changecolor view:nth-child(5) {
+  background-color: var(--read-5);
+}
+
+.opacity {
+  opacity: 0.3;
+}
+
+.meuncontrol {
+  position: fixed;
+  top: -500rpx;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7f7f7;
+  transition: all 0.3s;
+  font-size: calc(var(--title-h2) * 1rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20rpx;
+  z-index: 99;
+}
+
+.meuncontrol > view {
+  flex: 1;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 10rpx;
+  padding: 14rpx 10rpx;
+  border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.me {
+  background-color: antiquewhite;
+}
+
+.showmeuncontrol {
+  top: 0px;
+  opacity: 1;
+}
+
+.meuns {
+  position: fixed;
+  top: 0;
+  left: -300rpx;
+  bottom: 0;
+  overflow-y: scroll;
+  width: 300rpx;
+  background-color: #f7f7f7;
+  font-size: calc(var(--title-h2) * 1rpx);
+  transition: all 0.3s;
+}
+
+.meunsopen {
+  left: 0rpx;
+}
+
+.meuns view {
+  margin: 10rpx 0;
+  padding: 10rpx;
+  box-sizing: border-box;
+  max-width: 390rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.meuns view:nth-child(even) {
+  background-color: #ebeaea;
+}

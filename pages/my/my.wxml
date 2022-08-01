@@ -1,0 +1,84 @@
+<!-- pages/my/my.wxml -->
+<wxs module="fix">
+	var fixdescs = function (descs) {
+		return descs.trim().slice(0, 40) + '...'
+	}
+	module.exports = { fixdescs: fixdescs }
+</wxs>
+
+<capsule title="我的" />
+
+<view style="padding-top:{{ top+10 }}px; padding-bottom: {{ top+10 }}px;">
+	<!-- <view class="header">
+		<image src="../../static/svg/my.svg"></image>
+		<view class="right">
+			<view>王木木</view>
+			<view>Lorem ipsum dolor sit amet consectetur adipisicing elit.</view>
+		</view>
+	</view> -->
+
+	<!-- <view class="" hover-class="none" hover-stop-propagation="false">
+		<button size="mini" type="primary" plain="{{true}}" loading="{{false}}">hello</button>
+	</view> -->
+
+	<view class="likecontent">
+		<view class="content__nav">
+			<view bindtap="choose" data-index='0' class="{{selected===0?'bookse':''}}">图书</view>
+			<view bindtap="choose" data-index='1' class="{{selected===1?'moviese':''}}">短片</view>
+			<view bindtap="choose" data-index='2' class="{{selected===2?'musicse':''}}">音乐</view>
+		</view>
+
+		<view wx:if="{{selected===0}}">
+			<block wx:for="{{booklikelist}}" wx:key="fictionId">
+				<view bind:tap="gotodetail" data-fictionId="{{item.fictionId}}" data-readingto="{{item.readingto||0}}" data-scrolltop="{{item.scrolltop||0}}" class="bookbody" style="background: url({{item.cover}});">
+					<image class="left" src="{{item.cover}}"></image>
+					<view class="right">
+						<view>{{item.title}}</view>
+						<view>{{item.author}}</view>
+						<view>{{fix.fixdescs(item.descs)}}</view>
+					</view>
+					<view class="tag">{{item.fictionType}}</view>
+					<view class="readingto">{{item.readingto>0?'上次阅读到'+(item.readingto+1)+'章':'未开始阅读'}}</view>
+				</view>
+			</block>
+		</view>
+
+		<view wx:if="{{selected===1}}">
+			<block wx:for="{{movielikelist}}" wx:key="index">
+				<view class="moviebody needbox" bindtap="gotomoviedetail" data-index="{{index}}">
+					<image class="left" mode="widthFix" src="{{item.cover.detail}}"></image>
+					<view class="right">
+						<view>{{item.title}}</view>
+						<view>
+							<text>#{{item.category}}</text>
+							<text>✨{{item.authorname}}</text>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+
+		<view wx:if="{{selected===2}}">
+			<block wx:for="{{musiclikelist}}" wx:key="name">
+				<view class="musicbody">
+					<image style="animation-play-state:{{item.name===playmusicname&&isplaying?'running':'paused'}}" class="left" src="{{item.picurl}}"></image>
+					<view class="cont">
+						<view>
+							<text>{{item.name}}</text>
+							<view wx:if="{{item.name===playmusicname}}" class="musicicon">
+								<view></view>
+								<view></view>
+								<view></view>
+							</view>
+						</view>
+						<view>{{item.artistsname}}</view>
+					</view>
+					<image bindtap="play" data-index="{{index}}" class="right" src="{{playmusicname===item.name&&isplaying?'../../static/svg/pause_hui.svg':'../../static/svg/play_hui.svg'}}"></image>
+					<image bindtap="like" data-index="{{index}}" class="right right2" src="{{item.like?'../../static/svg/like_fill.svg':'../../static/svg/like.svg'}}"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+
+
+</view>

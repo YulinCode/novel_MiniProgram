@@ -1,0 +1,38 @@
+<view catch:tap="gohome" class="" style="background:url('{{ music.picurl }}') no-repeat center">
+	<view class="container" style="padding-top:{{ top+10 }}px;">
+		<capsule show="{{ false }}" title="音乐" needblur="{{flase}}" />
+		<view class="content">
+			<view class="content__imageinfo" hover-stop-propagation="{{ true }}">
+				<image class="content__imageinfo__img  transition" style="animation-play-state: {{ isplaying&&playingname===music.name?'running':'paused' }};" src="{{ music.picurl }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+			</view>
+			<view class="content__name" hover-stop-propagation="{{ true }}">
+				<view class="content__name__left">
+					<text class="" space="false" decode="false">{{music.name}}</text>
+					<text class="" space="false" decode="false">{{music.artistsname}}</text>
+				</view>
+				<view class="content__name__right">
+					<image bind:tap="like" class="content__name__rightimg" src="{{ music.like?'../../static/other/like.png':'../../static/other/nolike.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+				</view>
+			</view>
+			<view class="content__control" hover-stop-propagation="{{ true }}">
+				<!-- <view wx:if="{{isplaying&&playingname===music.name}}" class="content__view" style="animation-duration: {{musicduration}}s; animation-play-state: {{isplaying?'running':'paused'}};" /> -->
+				<image bind:tap="setnew" class="img" src="{{ !getnewmusic?'../../static/other/random.png':'../../static/other/random-se.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+				<image bind:tap="previous" class="img" style="opacity:{{ index===0?'0.3':'1' }}" src="../../static/other/up.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+				<image bind:tap="control" class="img img-play" src="{{ isplaying&&playingname===music.name?'../../static/other/pause.png':'../../static/other/play.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+				<image bind:tap="next" class="img" src="../../static/other/down.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+				<image catch:tap="openmeun" class="img" src="{{ !showitem?'../../static/other/playmenu.png':'../../static/other/playmenu-se.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+			</view>
+			<view class="musicitem" wx:if="{{ showitem }}">
+				<view class="musicitem_ul">
+					<block wx:for="{{ musiclist }}" wx:key="name">
+						<view class="musicitem_de" catch:tap="meunpaly" data-itemname="{{ item.name }}">
+							<text class="name">{{item.name}}</text>
+							<text class="artistsname">{{item.artistsname}}</text>
+							<image catch:tap="islike" data-itemname="{{ item.name }}" data-itemlike="{{ item.like }}" class="imagelike" src="{{ item.like?'../../static/other/like.png':'../../static/other/nolike.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+						</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

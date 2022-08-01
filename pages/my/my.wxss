@@ -1,0 +1,265 @@
+/* pages/my/my.wxss */
+page {
+	background-color: #f7f7f7;
+}
+
+.likecontent {
+	padding: 10rpx;
+}
+
+.content__nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.content__nav view {
+	margin: 10rpx 20rpx;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+	padding: 16rpx 50rpx;
+	border-radius: 30rpx;
+	background-color: transparent;
+	color: #000;
+	transition: all .3s;
+	font-size: calc(var(--title-h1) * 1rpx)
+}
+
+.content__nav .musicse {
+	background-color: var(--red-A200);
+	color: white;
+}
+
+.content__nav .bookse {
+	background-color: var(--orange-A200);
+	color: white;
+}
+
+.content__nav .moviese {
+	background-color: var(--blue-A200);
+	color: white;
+}
+
+.bookbody {
+	display: flex;
+	position: relative;
+	margin: 40rpx 25rpx;
+	border-radius: 6px;
+	overflow: hidden;
+	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.bookbody .left {
+	width: 200rpx;
+	height: 266rpx;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.bookbody .right {
+	flex: 1;
+	box-sizing: border-box;
+	height: 266rpx;
+	padding-left: 20rpx;
+	background: #ffffffc9;
+	backdrop-filter: blur(6px);
+}
+
+.bookbody .right view {
+	margin: 10rpx 4rpx;
+}
+
+.bookbody .right view:nth-child(1) {
+	font-size: calc(var(--title-h3) * 1rpx);
+	color: var(--grey-900);
+	font-weight: 600;
+}
+
+.bookbody .right view:nth-child(2) {
+	font-size: calc(var(--title-h4) * 1rpx);
+	color: var(--grey-800);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 400rpx;
+}
+
+.bookbody .right view:nth-child(3) {
+	font-size: calc(var(--title-h4) * 1rpx);
+	color: var(--grey-800);
+}
+
+
+.bookbody .tag {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10rpx 10rpx 10rpx 20rpx;
+	background-color: var(--orange-50);
+	border-radius: 30rpx 0 0 0;
+}
+
+.bookbody .readingto {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10rpx 10rpx 10rpx 20rpx;
+	font-size: calc(var(--title-h4) * 1rpx);
+	background-color: var(--orange-50);
+	border-radius: 0 0 0 20rpx;
+}
+
+.moviebody {
+	display: flex;
+	margin: 30rpx;
+	background-color: var(--grey-50);
+	padding: 20rpx;
+	border-radius: 9px;
+}
+
+.moviebody .left {
+	width: 300rpx;
+	border-radius: 3px;
+}
+
+.moviebody .right {
+	flex: 1;
+	margin-left: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.moviebody .right view:nth-child(1) {
+	font-size: calc(var(--title-h4) * 1rpx);
+}
+
+.moviebody .right view:nth-child(2) {
+	font-size: calc(var(--title-h5) * 1rpx);
+	display: flex;
+	justify-content: space-between;
+}
+
+/*  */
+@keyframes bounce {
+	10% {
+		transform: scaleY(0.3);
+		/* start by scaling to 30% */
+	}
+
+	30% {
+		transform: scaleY(1);
+		/* scale up to 100% */
+	}
+
+	60% {
+		transform: scaleY(0.5);
+		/* scale down to 50% */
+	}
+
+	80% {
+		transform: scaleY(0.75);
+		/* scale up to 75% */
+	}
+
+	100% {
+		transform: scaleY(0.6);
+		/* scale down to 60% */
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/*  */
+.musicbody {
+	display: flex;
+	position: relative;
+	margin: 30rpx;
+	align-items: center;
+	padding: 20rpx;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	border-radius: 6px;
+}
+
+.musicbody .left {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	animation: rotate 20s linear infinite;
+}
+
+.musicbody .cont {
+	flex: 1;
+	padding: 0 30rpx;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.musicbody .cont view text {
+	max-width: 250rpx;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.musicbody .cont view:nth-child(1) {
+	display: flex;
+	align-items: center;
+	font-size: calc(var(--title-h2) * 1rpx);
+
+}
+
+.musicbody .cont view:nth-child(2) {
+	font-size: calc(var(--title-h4) * 1rpx);
+}
+
+.musicbody .right {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.musicbody .right2 {
+	width: 70rpx;
+	height: 80rpx;
+	margin-left: 20rpx;
+}
+
+.musicicon {
+	/* position: absolute; */
+	display: flex;
+	justify-content: space-between;
+	width: 13px;
+	height: 13px;
+	bottom: 20rpx;
+	right: 20rpx;
+	padding-left: 20rpx;
+}
+
+.musicicon view {
+	width: 3px;
+	height: 100%;
+	background-color: var(--red-A200);
+	border-radius: 3px;
+	content: '';
+	animation: bounce 2.2s ease infinite alternate;
+	transform-origin: bottom;
+}
+
+.musicicon view:nth-child(2) {
+	animation-delay: -2.2s;
+}
+
+.musicicon view:nth-child(3) {
+	animation-delay: -3.7s;
+}
+
+/*  */

@@ -1,0 +1,4 @@
+/* pages/books/booklist/booklist.wxss */
+page {
+	background-color: var(--grey-100);
+}

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/books/books",
+    "pages/musics/musics",
+    "pages/movies/movies",
+    "pages/my/my",
+    "pages/movies/moviedetail/moviedetail",
+    "pages/books/bookdetail/bookdetail",
+    "pages/books/fictionContent/fictioncontent",
+    "pages/books/booklist/booklist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#999",
+    "selectedColor": "#f00",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/musics/musics",
+        "text": "音乐",
+        "iconPath": "/static/tabbar/music.png",
+        "selectedIconPath": "/static/tabbar/music-se.png"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "短片",
+        "iconPath": "/static/tabbar/movie.png",
+        "selectedIconPath": "/static/tabbar/movie-se.png"
+      },
+      {
+        "pagePath": "pages/books/books",
+        "text": "图书",
+        "iconPath": "/static/tabbar/book.png",
+        "selectedIconPath": "/static/tabbar/book-se.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/static/tabbar/my.png",
+        "selectedIconPath": "/static/tabbar/my-se.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "capsule": "../../components/capsule/capsule"
+  }
+}

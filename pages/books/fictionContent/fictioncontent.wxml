@@ -1,0 +1,86 @@
+<!--pages/books/fictionContent/fictioncontent.wxml-->
+<capsule
+ show="{{showcontrolsize?true:false}}"
+ isback="{{true}}"
+ title="{{showcontrolsize?title:''}}"
+ needblur="{{false}}"
+/>
+
+<loadiing wx:if="{{content.length===0}}" backcolor="{{backcolor}}" />
+
+<view
+ wx:if="{{content.length>0}}"
+ id="getheight"
+ wx:if="{{content}}"
+ style="font-size:{{fontsize}}px;line-height:{{lineheight}};color:{{fontcolor}};background-color:{{backcolor}};min-height: 100vh;"
+>
+	<!-- <view class="pars" style="width:{{width}}"></view> -->
+	<view class="content-body" bind:tap="controlsize" style="padding-top: {{top}}px; padding-bottom: 60rpx;">
+		<view class="content-body-title">{{title}}</view>
+		<block wx:for="{{content}}" wx:key="index">
+			<view style="margin-bottom: 20rpx;">{{item}}</view>
+		</block>
+		<view wx:if="{{content.length>0}}" class="control">
+			<view catch:tap="prea" class="prea" style="opacity:{{bookindex==0?'0.2':'1'}}">上一章</view>
+			<view catch:tap="back" class="meun">返回</view>
+			<view catch:tap="next" class="next" style="opacity:{{bookindex==readinglistnumber?'0.2':'1'}}">下一章</view>
+		</view>
+	</view>
+
+	<view class="meuncontrol {{showcontrolsize?'showmeuncontrol':''}}" style="padding-top:{{top}}px;height:{{60}}px;">
+		<view catch:tap="meunsopen" class="{{meunsopen?'me':''}}">目录</view>
+		<view catch:tap="prea" style="opacity:{{bookindex==0?'0.2':'1'}}">上一章</view>
+		<view catch:tap="next" style="opacity:{{bookindex==readinglistnumber?'0.2':'1'}}">下一章</view>
+	</view>
+
+
+	<scroll-view class="meuns {{showcontrolsize&&meunsopen?'meunsopen':''}}" scroll-y="true" bindscrolltolower="readinglist" style="padding-top:{{top+66}}px;padding-bottom:120px">
+		<block wx:for="{{tempreadinglist}}" wx:key="index">
+			<view catch:tap="chapter" data-index="{{index}}">{{item.title}}</view>
+		</block>
+	</scroll-view>
+
+	<view class="controlsize {{showcontrolsize?'nobottom':''}}" style="font-size:28rpx;background-color:#fff;color:#333">
+		<view class="controlsize__cont {{controlindex===1?'controlsize__cont__need':''}}">
+			<view class="conttitle">字体大小: {{fontsize}}</view>
+			<image
+			 style="opacity:{{fontsize<=12?'0.3':'1'}};"
+			 bind:tap="downfontsize"
+			 src="../../../static/svg/down.svg"
+			 mode="aspectFit|aspectFill|widthFix"
+			/>
+			<image
+			 style="opacity:{{fontsize>=32?'0.3':'1'}};"
+			 bind:tap="upfontsize"
+			 src="../../../static/svg/up.svg"
+			 mode="aspectFit|aspectFill|widthFix"
+			/>
+		</view>
+		<view class="changecolor controlsize__cont controlcolor {{controlindex===2?'controlsize__cont__need':''}}">
+			<view bind:tap="changecolor" data-color="#f7f7f7" />
+			<view bind:tap="changecolor" data-color="#dcd9c8" />
+			<view bind:tap="changecolor" data-color="#dbe3ce" />
+			<view bind:tap="changecolor" data-color="#ced8e2" />
+			<view bind:tap="changecolor" data-color="#0e0e0e" />
+		</view>
+		<view class="controlsize__cont {{controlindex===3?'controlsize__cont__need':''}}">
+			<view class="conttitle">文本行高: {{lineheight}}</view>
+			<image
+			 style="opacity:{{lineheight<=1?'0.3':'1'}};"
+			 bind:tap="downlineheight"
+			 src="../../../static/svg/down.svg"
+			 mode="aspectFit|aspectFill|widthFix"
+			/>
+			<image
+			 style="opacity:{{lineheight>=2.5?'0.3':'1'}};"
+			 bind:tap="uplineheight"
+			 src="../../../static/svg/up.svg"
+			 mode="aspectFit|aspectFill|widthFix"
+			/>
+		</view>
+
+		<view class="fix {{controlindex===1?'me':''}}" bind:tap="control" data-index='1'>字体大小</view>
+		<view class="fix {{controlindex===2?'me':''}}" bind:tap="control" data-index='2'>背景颜色</view>
+		<view class="fix {{controlindex===3?'me':''}}" bind:tap="control" data-index='3'>文本行高</view>
+	</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "capsule": "../../../components/capsule/capsule",
+    "videode": "../../../components/video/video"
+  }
+}

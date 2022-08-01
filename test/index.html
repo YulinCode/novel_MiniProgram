@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const na = [
+        {
+          name: '予你',
+          url: 'http://music.163.com/song/media/outer/url?id=1895330088',
+          picurl: 'http://p4.music.126.net/yxVm_vRFOode6yP67NmMcA==/109951166625738075.jpg',
+          artistsname: '队长',
+          like: false,
+        },
+        {
+          name: '失眠飞行',
+          url: 'http://music.163.com/song/media/outer/url?id=1365898499',
+          picurl: 'http://p4.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg',
+          artistsname: '接个吻，开一枪',
+          like: false,
+        },
+        {
+          name: '外婆桥',
+          url: 'http://music.163.com/song/media/outer/url?id=1393659632',
+          picurl: 'http://p3.music.126.net/Ep-CjAsRL5yvZkDreiWsMQ==/109951164390004861.jpg',
+          artistsname: '任然',
+          like: true,
+        },
+        {
+          name: '失眠飞行1',
+          url: 'http://music.163.com/song/media/outer/url?id=1365898499',
+          picurl: 'http://p4.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg',
+          artistsname: '接个吻，开一枪',
+          like: false,
+        },
+        {
+          name: '失眠飞行2',
+          url: 'http://music.163.com/song/media/outer/url?id=1365898499',
+          picurl: 'http://p4.music.126.net/Bq6Io8lpY1l2HsQ28QKFlw==/109951164083996255.jpg',
+          artistsname: '接个吻，开一枪',
+          like: true,
+        },
+      ]
+      const naa = na.sort((a, b) => (b.like === true ? 1 : -1))
+      console.log(naa)
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,43 @@
+<!--pages/books/bookdetail/bookdetail.wxml-->
+<capsule show="{{true}}" isback="{{true}}" title="详情" />
+
+<loadiing wx:if="{{!bookdetail.title}}" />
+
+<view style="padding-bottom: 100rpx;">
+	<view class="content" wx:if="{{bookdetail.title}}">
+		<view class="back" style="background: url({{bookdetail.cover}}); ">
+			<view class="header" style="padding-top: {{top+20}}px;">
+				<image class="left" src="{{bookdetail.cover}}"></image>
+				<view class="right">
+					<view>{{bookdetail.title}}</view>
+					<view>{{bookdetail.author}}</view>
+					<view>{{bookdetail.updateTime}}</view>
+					<view class="control">
+						<view bindtap="openread"><text>开始阅读</text></view>
+						<view style="opacity: {{!like?'1':'0.5'}};" bindtap="like"><text>{{like?'已加入书架':'加入书架'}}</text></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="content__body">
+			<view>简介：</view>
+			<view>
+				<text user-select="{{true}}">{{jianjie}}</text>
+				<view wx:if="{{showbutton}}" class="all" bindtap="showall">查看更多</view>
+			</view>
+		</view>
+		<view class="chapterList">
+			<view>
+				<view><text>目录：</text></view>
+				<view>
+					<text bind:tap="chapterListodd">↑正序</text>
+					<text bind:tap="chapterListeven">↓倒序</text>
+				</view>
+			</view>
+			<block wx:for="{{bookdetail.chapterList}}" wx:key="index">
+				<view bindtap="gotofictionContent" data-index="{{index}}">{{item.title}}</view>
+			</block>
+			<view bind:tap="morechapterList" class="allchapterList">查看更多</view>
+		</view>
+	</view>
+</view>
